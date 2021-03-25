@@ -13,4 +13,4 @@ INSERT INTO books_table (award, title, author, year) VALUES
 --> 'The Pultizer Prize for Fiction'
 ('The Pultizer Prize for Fiction', 'The Nickel Boys', 'Colson Whitehead', 2020),
 ('The Pultizer Prize for Fiction', 'The Overstory', 'Richard Powers', 2019),
-('The Pultizer Prize for Fiction', 'Less', 'Andrew Sean Greer', 2018),
+('The Pultizer Prize for Fiction', 'Less', 'Andrew Sean Greer', 2018)
