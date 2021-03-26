@@ -14,19 +14,19 @@ INSERT INTO books_table (award, title, author, year) VALUES
 ('The Booker Prize', 'Shuggie Bain', 'Douglas Stuart', 2020),
 ('The Booker Prize', 'The Testaments', 'Magaret Atwood' , 2019),
 ('The Booker Prize', 'Milkman','Anna Burns', 2018),
-('Something To Answer For', 'PH Newby', 1969),
-('The Elected Member', 'Bernice Rubens', 1970)
-('In a Free State', 'VS Naipaul', 1971),
-('G', 'John Berger', 1972),
-The Siege of Krishnapur	JG Farrell, 1973
-Holiday	Stanley Middleton, 1974
-The Conservationist	Nadine Gordimer, 1974
-Heat and Dust	Ruth Prawer Jhabvala, 1975
-Saville	David Storey, 1976
-Staying On	Paul Scott, 1977
-The Sea, The Sea	Iris Murdoch, 1978
-Offshore	Penelope Fitzgerald, 1979
-Rites of Passage	William Golding, 1980
+('The Booker Prize', 'Something To Answer For', 'PH Newby', 1969),
+('The Booker Prize', 'The Elected Member', 'Bernice Rubens', 1970)
+('The Booker Prize', 'In a Free State', 'VS Naipaul', 1971),
+('The Booker Prize', 'G', 'John Berger', 1972),
+('The Booker Prize', 'The Siege of Krishnapur', 'JG Farrell', 1973),
+('The Booker Prize', 'Holiday', 'Stanley Middleton', 1974),
+('The Booker Prize', 'The Conservationist', 'Nadine Gordimer', 1974),
+('The Booker Prize', 'Heat and Dust', 'Ruth Prawer Jhabvala', 1975),
+('The Booker Prize', 'Saville', 'David Storey', 1976),
+('Staying On', 'Paul Scott', 1977),
+('The Sea, The Sea', 'Iris Murdoch', 1978),
+('Offshore', 'Penelope Fitzgerald', 1979),
+(Rites of Passage, 'William Golding', 1980),
 ('Midnight''s Children', 'Salman Rushdie', 1981)
 Schindler''s Ark	Thomas Keneally	1982
 Life & Times of Michael K	JM Coetzee, 1983
