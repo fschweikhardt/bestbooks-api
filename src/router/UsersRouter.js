@@ -6,10 +6,11 @@ const UsersService = require('./UsersService')
 // const jwt = require('jsonwebtoken')
 // const { JWT_SECRET } = require('../config')
 const logger = require('../logger.js')
+const { readSync } = require('fs')
 //xss
 
 UsersRouter
-    .route('/api/test')
+    .route('/test')
     .get((req,res,next) => {
         res.status(200).send("working")
         next()
@@ -21,7 +22,7 @@ UsersRouter
     })
 
 UsersRouter
-    .route('/api/all-books')
+    .route('/all-books')
     .get((req,res,next) => {
         //gets all books
         UsersService.allBooks(req.app.get('db'))
@@ -34,7 +35,7 @@ UsersRouter
     })
 
 UsersRouter
-    .route('/api/award-list')
+    .route('/award-list')
     .post(bodyParser, (req,res,next) => {
         const { award } = req.body
         //gets all books from one award list
@@ -48,7 +49,7 @@ UsersRouter
     })
 
 UsersRouter
-    .route('/api/year-list')
+    .route('/year-list')
     .post(bodyParser, (req,res,next) => {
         const { year } = req.body
         //gets all books from one year
@@ -62,7 +63,7 @@ UsersRouter
     })
 
 UsersRouter
-    .route('/api/specific-book')
+    .route('/specific-book')
     .post(bodyParser, (req,res,next) => {
         const { award, year } = req.body
         //gets one book from specified list and year
@@ -76,10 +77,25 @@ UsersRouter
     })
 
 UsersRouter
-    .route('/api/random-book')
+    .route('/random-book')
     .get((req,res,next) => {
-        //gets one book at random
-        UsersService.randomBook(req.app.get('db'))
+        //get random number based off db length
+        UsersService.dbLength(req.app.get('db'))
+            .then(data => {
+                //get db length
+                let dbLength = Number(Object.values(data[0]))
+                //get random number 
+                const randomId = Math.floor((Math.random() * dbLength) + 1)
+                UsersService.getRandomBook(req.app.get('db'), randomId)
+                    .then( book => {
+                        res
+                            .status(200)
+                            .json(book)
+                    })
+                    .catch(next)
+
+            })
+            .catch(next)
     })
 
 

@@ -24,7 +24,7 @@ const morganOption = (NODE_ENV === 'production')
   );
   //app.use(validateBearerToken)
 
-app.use(UsersRouter)
+app.use('/api', UsersRouter)
 
 app.get('/', (req, res) => {
   res.send('Hello, Best Books!')
