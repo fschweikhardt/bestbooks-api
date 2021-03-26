@@ -1,21 +1,21 @@
 INSERT INTO books_table (award, title, author, year) VALUES
 --> 'The Andrew Carnegie Medals for Excellence in Fiction'
-('The Andrew Carnegie Medals for Excellence in Fiction', 'Lost Children Archive', 'Valeria Luiselli', 2020)
-('The Andrew Carnegie Medals for Excellence in Fiction', 'The Great Believers', 'Rebecca Makkai', 2019)
-('The Andrew Carnegie Medals for Excellence in Fiction', 'Manhattan Beach', 'Jennifer Egan', 2018)
-('The Andrew Carnegie Medals for Excellence in Fiction', 'The Underground Railroad', 'Colson Whitehead', 2017)
+('The Andrew Carnegie Medals for Excellence in Fiction', 'Lost Children Archive', 'Valeria Luiselli', 2020),
+('The Andrew Carnegie Medals for Excellence in Fiction', 'The Great Believers', 'Rebecca Makkai', 2019),
+('The Andrew Carnegie Medals for Excellence in Fiction', 'Manhattan Beach', 'Jennifer Egan', 2018),
+('The Andrew Carnegie Medals for Excellence in Fiction', 'The Underground Railroad', 'Colson Whitehead', 2017),
 ('The Andrew Carnegie Medals for Excellence in Fiction', 'The Sympathizer', 'Viet Thanh Nguyen', 2016),
 ('The Andrew Carnegie Medals for Excellence in Fiction', 'All the Light We Cannot See', 'Anthony Doerr', 2015),
 ('The Andrew Carnegie Medals for Excellence in Fiction', 'The Goldfinch', 'Donna Tartt', 2014),
 ('The Andrew Carnegie Medals for Excellence in Fiction', 'Canada', 'Richard Ford', 2013),
-('The Andrew Carnegie Medals for Excellence in Fiction', 'The Forgotten Waltz', 'Anne Enright', 2012)
+('The Andrew Carnegie Medals for Excellence in Fiction', 'The Forgotten Waltz', 'Anne Enright', 2012),
 
 --> 'The Booker Prize'
 ('The Booker Prize', 'Shuggie Bain', 'Douglas Stuart', 2020),
 ('The Booker Prize', 'The Testaments', 'Magaret Atwood' , 2019),
 ('The Booker Prize', 'Milkman','Anna Burns', 2018),
 ('The Booker Prize', 'Something To Answer For', 'PH Newby', 1969),
-('The Booker Prize', 'The Elected Member', 'Bernice Rubens', 1970)
+('The Booker Prize', 'The Elected Member', 'Bernice Rubens', 1970),
 ('The Booker Prize', 'In a Free State', 'VS Naipaul', 1971),
 ('The Booker Prize', 'G', 'John Berger', 1972),
 ('The Booker Prize', 'The Siege of Krishnapur', 'JG Farrell', 1973),
@@ -27,7 +27,7 @@ INSERT INTO books_table (award, title, author, year) VALUES
 ('The Booker Prize', 'The Sea, The Sea', 'Iris Murdoch', 1978),
 ('The Booker Prize', 'Offshore', 'Penelope Fitzgerald', 1979),
 ('The Booker Prize', 'Rites of Passage', 'William Golding', 1980),
-('The Booker Prize', 'Midnight''s Children', 'Salman Rushdie', 1981)
+('The Booker Prize', 'Midnight''s Children', 'Salman Rushdie', 1981),
 ('The Booker Prize', 'Schindler''s Ark', 'Thomas Keneally', 1982),
 ('The Booker Prize', 'Life & Times of Michael K', 'JM Coetzee', 1983),
 ('The Booker Prize', 'Hotel du Lac', 'Anita Brookner', 1984),
@@ -65,7 +65,7 @@ INSERT INTO books_table (award, title, author, year) VALUES
 ('The Booker Prize', 'The Sellout', 'Paul Beatty', 2016),
 ('The Booker Prize', 'A Brief History of Seven Killings', 'Marlon James', 2015),
 ('The Booker Prize', 'The Narrow Road to the Deep North', 'Richard Flanagan', 2014),
-('The Booker Prize', 'The Luminaries', 'Eleanor Catton', 2013)
+('The Booker Prize', 'The Luminaries', 'Eleanor Catton', 2013),
 
 --> 'National Book Award for Fiction'
 ('National Book Award for Fiction', 'Interior Chinatown', 'Charles Yu', 2020),
@@ -145,7 +145,7 @@ INSERT INTO books_table (award, title, author, year) VALUES
 ('National Book Award for Fiction', 'Redeployment', 'Phil Klay', 2014),
 ('National Book Award for Fiction', 'Fortune Smiles', 'Adam Johnson', 2015),
 ('National Book Award for Fiction', 'The Underground Railroad', 'Colson Whitehead', 2016),
-('National Book Award for Fiction', 'Sing, Unburied, Sing', 'Jesmyn Ward', 2017)
+('National Book Award for Fiction', 'Sing, Unburied, Sing', 'Jesmyn Ward', 2017),
 
 --> 'The National Book Critics Circle Award'
 
@@ -153,7 +153,7 @@ INSERT INTO books_table (award, title, author, year) VALUES
 ('The National Book Critics Circle Award', 'October Light', 'John Gardner', 1976),
 ('The National Book Critics Circle Award', 'Song of Solomon', 'Toni Morrison', 1977),
 ('The National Book Critics Circle Award', 'The Stories of John Cheever', 'John Cheever', 1978),
-('The National Book Critics Circle Award', 'The Year of the French', 'Thomas Flanagan,' 1979),
+('The National Book Critics Circle Award', 'The Year of the French', 'Thomas Flanagan', 1979),
 ('The National Book Critics Circle Award', 'The Transit of Venus', 'Shirley Hazzard', 1980),
 ('The National Book Critics Circle Award', 'Rabbit Is Rich', 'John Updike', 1981),
 ('The National Book Critics Circle Award', 'George Mills', 'Stanley Elkin', 1982),
@@ -193,20 +193,20 @@ INSERT INTO books_table (award, title, author, year) VALUES
 ('The National Book Critics Circle Award', 'LaRose', 'Louise Erdrich', 2016),
 ('The National Book Critics Circle Award', 'Improvement', 'Joan Silber', 2017),
 ('The National Book Critics Circle Award', 'Milkman', 'Anna Burns', 2018),
-('The National Book Critics Circle Award', 'Everything Inside', 'Edwidge Danticat', 2019)
+('The National Book Critics Circle Award', 'Everything Inside', 'Edwidge Danticat', 2019),
 
 --> 'The PEN/Bellwether Prize for Socially Engaged Fiction'
-('The PEN/Bellwether Prize for Socially Engaged Fiction', 'Hydrangeas of New Jessup', 'Jamila Minnicks Gleason', 2020)
-('The PEN/Bellwether Prize for Socially Engaged Fiction', 'At the Edge of the Haight', 'Katherine Seligman', 2019)
-('The PEN/Bellwether Prize for Socially Engaged Fiction', 'The Leavers', 'Lisa Ko', 2016)
-('The PEN/Bellwether Prize for Socially Engaged Fiction', 'And West Is West', 'Ron Childress', 2014)
-('The PEN/Bellwether Prize for Socially Engaged Fiction', 'Good Kings Bad Kings', 'Susan Nussbaum', 2012)
-('The PEN/Bellwether Prize for Socially Engaged Fiction', 'Running the Rift', 'Naomi Benaron', 2010)
-('The PEN/Bellwether Prize for Socially Engaged Fiction', 'The Girl Who Fell From the Sky', 'Heidi W. Durrow', 2008)
-('The PEN/Bellwether Prize for Socially Engaged Fiction', 'Mudbound', 'Hillary Jordan', 2006)
-('The PEN/Bellwether Prize for Socially Engaged Fiction', 'Correcting the Landscape', 'Marjorie Kowalski Cole', 2004)
-('The PEN/Bellwether Prize for Socially Engaged Fiction', 'The Book of Dead Birds', 'Gayle Brandeis', 2002)
-('The PEN/Bellwether Prize for Socially Engaged Fiction', 'Kissing the Virgin’s Mouth', 'Donna Gershten', 2000)
+('The PEN/Bellwether Prize for Socially Engaged Fiction', 'Hydrangeas of New Jessup', 'Jamila Minnicks Gleason', 2020),
+('The PEN/Bellwether Prize for Socially Engaged Fiction', 'At the Edge of the Haight', 'Katherine Seligman', 2019),
+('The PEN/Bellwether Prize for Socially Engaged Fiction', 'The Leavers', 'Lisa Ko', 2016),
+('The PEN/Bellwether Prize for Socially Engaged Fiction', 'And West Is West', 'Ron Childress', 2014),
+('The PEN/Bellwether Prize for Socially Engaged Fiction', 'Good Kings Bad Kings', 'Susan Nussbaum', 2012),
+('The PEN/Bellwether Prize for Socially Engaged Fiction', 'Running the Rift', 'Naomi Benaron', 2010),
+('The PEN/Bellwether Prize for Socially Engaged Fiction', 'The Girl Who Fell From the Sky', 'Heidi W. Durrow', 2008),
+('The PEN/Bellwether Prize for Socially Engaged Fiction', 'Mudbound', 'Hillary Jordan', 2006),
+('The PEN/Bellwether Prize for Socially Engaged Fiction', 'Correcting the Landscape', 'Marjorie Kowalski Cole', 2004),
+('The PEN/Bellwether Prize for Socially Engaged Fiction', 'The Book of Dead Birds', 'Gayle Brandeis', 2002),
+('The PEN/Bellwether Prize for Socially Engaged Fiction', 'Kissing the Virgin’s Mouth', 'Donna Gershten', 2000),
 
 --> 'The PEN/Faulkner Award for Fiction'
 
@@ -215,10 +215,10 @@ INSERT INTO books_table (award, title, author, year) VALUES
 --> 'The Pultizer Prize for Fiction'
 ('The Pultizer Prize for Fiction', 'The Nickel Boys', 'Colson Whitehead', 2020),
 ('The Pultizer Prize for Fiction', 'The Overstory', 'Richard Powers', 2019),
-('The Pultizer Prize for Fiction', 'Less', 'Andrew Sean Greer', 2018)
+('The Pultizer Prize for Fiction', 'Less', 'Andrew Sean Greer', 2018),
 ('The Pultizer Prize for Fiction', 'His Family', 'Ernest Poole', 1918),
 ('The Pultizer Prize for Fiction', 'The Magnificent Ambersons', 'Booth Tarkington', 1919),
-('The Pultizer Prize for Fiction', 'The Age of Innocence', 'Edith Wharton', 1921)
+('The Pultizer Prize for Fiction', 'The Age of Innocence', 'Edith Wharton', 1921),
 ('The Pultizer Prize for Fiction', 'Alice Adams', 'Booth Tarkington', 1922), 
 ('The Pultizer Prize for Fiction', 'One of Ours', 'Willa Cather', 1923),
 ('The Pultizer Prize for Fiction', 'The Able McLaughlins', 'Margaret Wilson', 1924),
@@ -273,7 +273,7 @@ INSERT INTO books_table (award, title, author, year) VALUES
 ('The Pultizer Prize for Fiction', 'A Confederacy of Dunces', 'John Kennedy Toole', 1981),
 ('The Pultizer Prize for Fiction', 'Rabbit Is Rich', 'John Updike', 1982),
 ('The Pultizer Prize for Fiction', 'The Color Purple', 'Alice Walker', 1983),
-('The Pultizer Prize for Fiction', 'Ironweed,' 'William Kennedy', 1984),
+('The Pultizer Prize for Fiction', 'Ironweed', 'William Kennedy', 1984),
 ('The Pultizer Prize for Fiction', 'Foreign Affairs', 'Alison Lurie', 1985),
 ('The Pultizer Prize for Fiction', 'Lonesome Dove', 'Larry McMurtry', 1986),
 ('The Pultizer Prize for Fiction', 'A Summons to Memphis', 'Peter Taylor', 1987),
