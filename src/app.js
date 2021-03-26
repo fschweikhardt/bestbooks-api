@@ -26,7 +26,7 @@ const morganOption = (NODE_ENV === 'production')
 
 app.use('/api', UsersRouter)
 
-app.get('/', (req, res) => {
+app.get('/', (req,res,next) => {
   res.send('Hello, Best Books!')
   })
     
