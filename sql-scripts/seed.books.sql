@@ -1,14 +1,14 @@
 INSERT INTO books_table (award, title, author, year) VALUES
 --> 'The Andrew Carnegie Medals for Excellence in Fiction'
-('Lost Children Archive', 'Valeria Luiselli', 2020)
-('The Great Believers', 'Rebecca Makkai', 2019)
-('Manhattan Beach', 'Jennifer Egan', 2018)
-('The Underground Railroad', 'Colson Whitehead', 2017)
-('The Sympathizer', 'Viet Thanh Nguyen', 2016),
-('All the Light We Cannot See', 'Anthony Doerr', 2015),
-('The Goldfinch', 'Donna Tartt', 2014),
-('Canada', 'Richard Ford', 2013),
-('The Forgotten Waltz', 'Anne Enright', 2012)
+('The Andrew Carnegie Medals for Excellence in Fiction', 'Lost Children Archive', 'Valeria Luiselli', 2020)
+('The Andrew Carnegie Medals for Excellence in Fiction', 'The Great Believers', 'Rebecca Makkai', 2019)
+('The Andrew Carnegie Medals for Excellence in Fiction', 'Manhattan Beach', 'Jennifer Egan', 2018)
+('The Andrew Carnegie Medals for Excellence in Fiction', 'The Underground Railroad', 'Colson Whitehead', 2017)
+('The Andrew Carnegie Medals for Excellence in Fiction', 'The Sympathizer', 'Viet Thanh Nguyen', 2016),
+('The Andrew Carnegie Medals for Excellence in Fiction', 'All the Light We Cannot See', 'Anthony Doerr', 2015),
+('The Andrew Carnegie Medals for Excellence in Fiction', 'The Goldfinch', 'Donna Tartt', 2014),
+('The Andrew Carnegie Medals for Excellence in Fiction', 'Canada', 'Richard Ford', 2013),
+('The Andrew Carnegie Medals for Excellence in Fiction', 'The Forgotten Waltz', 'Anne Enright', 2012)
 
 --> 'The Booker Prize'
 ('The Booker Prize', 'Shuggie Bain', 'Douglas Stuart', 2020),
@@ -23,49 +23,49 @@ INSERT INTO books_table (award, title, author, year) VALUES
 ('The Booker Prize', 'The Conservationist', 'Nadine Gordimer', 1974),
 ('The Booker Prize', 'Heat and Dust', 'Ruth Prawer Jhabvala', 1975),
 ('The Booker Prize', 'Saville', 'David Storey', 1976),
-('Staying On', 'Paul Scott', 1977),
-('The Sea, The Sea', 'Iris Murdoch', 1978),
-('Offshore', 'Penelope Fitzgerald', 1979),
-(Rites of Passage, 'William Golding', 1980),
-('Midnight''s Children', 'Salman Rushdie', 1981)
-Schindler''s Ark	Thomas Keneally	1982
-Life & Times of Michael K	JM Coetzee, 1983
-Hotel du Lac	Anita Brookner, 1984
-The Bone People	Keri Hulme, 1985
-The Old Devils	Kingsley Amis, 1986
-Moon Tiger	Penelope Lively	1987
-Oscar and Lucinda	Peter Carey	1988
-The Remains of the Day	Kazuo Ishiguro, 1989
-Possession	AS Byatt, 1990
-The Famished Road	Ben Okri, 1991
-Sacred Hunger	Barry Unsworth, 1992
-The English Patient	Michael Ondaatje, 1992
-Paddy Clarke Ha Ha Ha	Roddy Doyle, 1993
-How Late It Was, How Late	James Kelman, 1994
-The Ghost Road	Pat Barker, 1995
-Last Orders	Graham Swift, 1996
-The God of Small Things	Arundhati Roy, 1997
-Amsterdam	Ian McEwan, 1998
-Disgrace	JM Coetzee, 1999
-The Blind Assassin	Margaret Atwood	2000
-True History of the Kelly Gang	Peter Carey	2001
-Life of Pi	Yann Martel	2002
-Vernon God Little	DBC Pierre, 2003
-The Line of Beauty	Alan Hollinghurst, 2004
-The Sea	John Banville, 2005
-The Inheritance of Loss	Kiran Desai	2006
-The Gathering	Anne Enright, 2007
-The White Tiger	Aravind Adiga, 2008
-Wolf Hall	Hilary Mantel, 2009
-Troubles	JG Farrell, 1970 "Lost Booker"
-The Finkler Question	Howard Jacobson	2010
-The Sense of an Ending	Julian Barnes, 2011
-Bring Up the Bodies	Hilary Mantel, 2012
-Lincoln in the Bardo, George Saunders, 2017
-The Sellout, Paul Beatty, 2016
-A Brief History of Seven Killings, Marlon James, 2015
-The Narrow Road to the Deep North, Richard Flanagan, 2014
-The Luminaries, Eleanor Catton, 2013
+('The Booker Prize', 'Staying On', 'Paul Scott', 1977),
+('The Booker Prize', 'The Sea, The Sea', 'Iris Murdoch', 1978),
+('The Booker Prize', 'Offshore', 'Penelope Fitzgerald', 1979),
+('The Booker Prize', 'Rites of Passage', 'William Golding', 1980),
+('The Booker Prize', 'Midnight''s Children', 'Salman Rushdie', 1981)
+('The Booker Prize', 'Schindler''s Ark', 'Thomas Keneally', 1982),
+('The Booker Prize', 'Life & Times of Michael K', 'JM Coetzee', 1983),
+('The Booker Prize', 'Hotel du Lac', 'Anita Brookner', 1984),
+('The Booker Prize', 'The Bone People', 'Keri Hulme', 1985),
+('The Booker Prize', 'The Old Devils', 'Kingsley Amis', 1986),
+('The Booker Prize', 'Moon Tiger', 'Penelope Lively', 1987),
+('The Booker Prize', 'Oscar and Lucinda', 'Peter Carey', 1988),
+('The Booker Prize', 'The Remains of the Day', 'Kazuo Ishiguro', 1989),
+('The Booker Prize', 'Possession', 'AS Byatt', 1990),
+('The Booker Prize', 'The Famished Road', 'Ben Okri', 1991),
+('The Booker Prize', 'Sacred Hunger', 'Barry Unsworth', 1992),
+('The Booker Prize', 'The English Patient', 'Michael Ondaatje', 1992),
+('The Booker Prize', 'Paddy Clarke Ha Ha Ha', 'Roddy Doyle', 1993),
+('The Booker Prize', 'How Late It Was, How Late', 'James Kelman', 1994),
+('The Booker Prize', 'The Ghost Road', 'Pat Barker', 1995),
+('The Booker Prize', 'Last Orders', 'Graham Swift', 1996),
+('The Booker Prize', 'The God of Small Things', 'Arundhati Roy', 1997),
+('The Booker Prize', 'Amsterdam', 'Ian McEwan', 1998),
+('The Booker Prize', 'Disgrace', 'JM Coetzee', 1999),
+('The Booker Prize', 'The Blind Assassin', 'Margaret Atwood', 2000),
+('The Booker Prize', 'True History of the Kelly Gang', 'Peter Carey', 2001),
+('The Booker Prize', 'Life of Pi', 'Yann Martel', 2002),
+('The Booker Prize', 'Vernon God Little', 'DBC Pierre', 2003),
+('The Booker Prize', 'The Line of Beauty', 'Alan Hollinghurst', 2004),
+('The Booker Prize', 'The Sea', 'John Banville', 2005),
+('The Booker Prize', 'The Inheritance of Loss', 'Kiran Desai', 2006),
+('The Booker Prize', 'The Gathering', 'Anne Enright', 2007),
+('The Booker Prize', 'The White Tiger', 'Aravind Adiga', 2008),
+('The Booker Prize', 'Wolf Hall', 'Hilary Mantel', 2009),
+('The Booker Prize', 'Troubles', 'JG Farrell "Lost Booker"', 1970),
+('The Booker Prize', 'The Finkler Question', 'Howard Jacobson', 2010),
+('The Booker Prize', 'The Sense of an Ending', 'Julian Barnes', 2011),
+('The Booker Prize', 'Bring Up the Bodies', 'Hilary Mantel', 2012),
+('The Booker Prize', 'Lincoln in the Bardo', 'George Saunders', 2017),
+('The Booker Prize', 'The Sellout', 'Paul Beatty', 2016),
+('The Booker Prize', 'A Brief History of Seven Killings', 'Marlon James', 2015),
+('The Booker Prize', 'The Narrow Road to the Deep North', 'Richard Flanagan', 2014),
+('The Booker Prize', 'The Luminaries', 'Eleanor Catton', 2013)
 
 --> 'National Book Award for Fiction'
 ('National Book Award for Fiction', 'Interior Chinatown', 'Charles Yu', 2020),
