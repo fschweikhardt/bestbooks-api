@@ -13,6 +13,17 @@ INSERT INTO books_table (award, title, author, year) VALUES
 --> 'The National Book Critics Circle Award'
 
 --> 'The PEN/Bellwether Prize for Socially Engaged Fiction'
+('The PEN/Bellwether Prize for Socially Engaged Fiction', 'Hydrangeas of New Jessup', 'Jamila Minnicks Gleason', 2020)
+('The PEN/Bellwether Prize for Socially Engaged Fiction', 'At the Edge of the Haight', 'Katherine Seligman', 2019)
+('The PEN/Bellwether Prize for Socially Engaged Fiction', 'The Leavers', 'Lisa Ko', 2016)
+('The PEN/Bellwether Prize for Socially Engaged Fiction', 'And West Is West', 'Ron Childress', 2014)
+('The PEN/Bellwether Prize for Socially Engaged Fiction', 'Good Kings Bad Kings', 'Susan Nussbaum', 2012)
+('The PEN/Bellwether Prize for Socially Engaged Fiction', 'Running the Rift', 'Naomi Benaron', 2010)
+('The PEN/Bellwether Prize for Socially Engaged Fiction', 'The Girl Who Fell From the Sky', 'Heidi W. Durrow', 2008)
+('The PEN/Bellwether Prize for Socially Engaged Fiction', 'Mudbound', 'Hillary Jordan', 2006)
+('The PEN/Bellwether Prize for Socially Engaged Fiction', 'Correcting the Landscape', 'Marjorie Kowalski Cole', 2004)
+('The PEN/Bellwether Prize for Socially Engaged Fiction', 'The Book of Dead Birds', 'Gayle Brandeis', 2002)
+('The PEN/Bellwether Prize for Socially Engaged Fiction', 'Kissing the Virgin’s Mouth', 'Donna Gershten', 2000)
 
 --> 'The PEN/Faulkner Award for Fiction'
 
@@ -78,35 +89,34 @@ INSERT INTO books_table (award, title, author, year) VALUES
 ('The Pultizer Prize for Fiction', 'Rabbit Is Rich', 'John Updike', 1982),
 ('The Pultizer Prize for Fiction', 'The Color Purple', 'Alice Walker', 1983),
 ('The Pultizer Prize for Fiction', 'Ironweed,' 'William Kennedy', 1984),
-(Foreign Affairs by Alison Lurie 1985),
-(Lonesome Dove by Larry McMurtry 1986),
-(A Summons to Memphis by Peter Taylor 1987),
-(Beloved by Toni Morrison 1988),
-(Breathing Lessons by Anne Tyler 1989),
-(The Mambo Kings Play Songs of Love by Oscar Hijuelos 1990),
-(Rabbit at Rest by John Updike 1991),
-(A Thousand Acres by Jane Smiley 1992),
-(A Good Scent from a Strange Mountain by Robert Olen Butler 1993),
-(The Shipping News by E. Annie Proulx 1994),
-(The Stone Diaries by Carol Shields 1995),
-(Independence Day by Richard Ford 1996),
-(Martin Dressler: The Tale of an American Dreamer by Steven Millhauser 1997),
-(American Pastoral by Philip Roth 1998),
-(The Hours by Michael Cunningham 1999),
-(Interpreter of Maladies by Jhumpa Lahiri 2000	),
-(The Amazing Adventures of Kavalier & Clay by Michael Chabon 2001),
-(Empire Falls by Richard Russo 2002),
-(Middlesex by Jeffrey Eugenides 2003),
-(The Known World by Edward P. Jones 2004),
-(Gilead by Marilynne Robinson 2005),
-(March by Geraldine Brooks 2006),
-(The Road by Cormac McCarthy 2007),
-(The Brief Wondrous Life of Oscar Wao by Junot Díaz 2008),
-(Olive Kitteridge by Elizabeth Strout 2009),
-(Tinkers by Paul Harding 2010),
-(A Visit from the Goon Squad by Jennifer Egan 2011),
-No award given 2012
-(The Orphan Master's Son by Adam Johnson' 2013),
-(The Goldfinch by Donna Tartt 2014),
-(All the Light We Cannot See by Anthony Doerr 2015),
-(The Sympathizer by Viet Thanh Nguyen 2016)
+('The Pultizer Prize for Fiction', 'Foreign Affairs', 'Alison Lurie', 1985),
+('The Pultizer Prize for Fiction', 'Lonesome Dove', 'Larry McMurtry', 1986),
+('The Pultizer Prize for Fiction', 'A Summons to Memphis', 'Peter Taylor', 1987),
+('The Pultizer Prize for Fiction', 'Beloved', 'Toni Morrison', 1988),
+('The Pultizer Prize for Fiction', 'Breathing Lessons', 'Anne Tyler', 1989),
+('The Pultizer Prize for Fiction', 'The Mambo Kings Play Songs of Love', 'Oscar Hijuelos', 1990),
+('The Pultizer Prize for Fiction', 'Rabbit at Rest', 'John Updike', 1991),
+('The Pultizer Prize for Fiction', 'A Thousand Acres', 'Jane Smiley', 1992),
+('The Pultizer Prize for Fiction', 'A Good Scent from a Strange Mountain', 'Robert Olen Butler', 1993),
+('The Pultizer Prize for Fiction', 'The Shipping News', 'E. Annie Proulx', 1994),
+('The Pultizer Prize for Fiction', 'The Stone Diaries', 'Carol Shields', 1995),
+('The Pultizer Prize for Fiction', 'Independence Day', 'Richard Ford', 1996),
+('The Pultizer Prize for Fiction', 'Martin Dressler: The Tale of an American Dreamer', 'Steven Millhauser', 1997),
+('The Pultizer Prize for Fiction', 'American Pastoral', 'Philip Roth', 1998),
+('The Pultizer Prize for Fiction', 'The Hours', 'Michael Cunningha', 1999),
+('The Pultizer Prize for Fiction', 'Interpreter of Maladies', 'Jhumpa Lahiri', 2000),
+('The Pultizer Prize for Fiction', 'The Amazing Adventures of Kavalier & Clay', 'Michael Chabon', 2001),
+('The Pultizer Prize for Fiction', 'Empire Falls', 'Richard Russo', 2002),
+('The Pultizer Prize for Fiction', 'Middlesex', 'Jeffrey Eugenides', 2003),
+('The Pultizer Prize for Fiction', 'The Known World', 'Edward P. Jones', 2004),
+('The Pultizer Prize for Fiction', 'Gilead', 'Marilynne Robinson', 2005),
+('The Pultizer Prize for Fiction', 'March', 'Geraldine Brooks', 2006),
+('The Pultizer Prize for Fiction', 'The Road', 'Cormac McCarthy', 2007),
+('The Pultizer Prize for Fiction', 'The Brief Wondrous Life of Oscar Wao', 'Junot Díaz', 2008),
+('The Pultizer Prize for Fiction', 'Olive Kitteridge', 'Elizabeth Strout', 2009),
+('The Pultizer Prize for Fiction', 'Tinkers', 'Paul Harding', 2010),
+('The Pultizer Prize for Fiction', 'A Visit from the Goon Squad', 'Jennifer Egan', 2011),
+('The Pultizer Prize for Fiction', 'The Orphan Master''s Son', 'Adam Johnson', 2013),
+('The Pultizer Prize for Fiction', 'The Goldfinch', 'Donna Tartt', 2014),
+('The Pultizer Prize for Fiction', 'All the Light We Cannot See', 'Anthony Doerr', 2015),
+('The Pultizer Prize for Fiction', 'The Sympathizer', 'Viet Thanh Nguyen', 2016)
