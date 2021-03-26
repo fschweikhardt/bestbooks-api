@@ -88,6 +88,7 @@ UsersRouter
                 const randomId = Math.floor((Math.random() * dbLength) + 1)
                 UsersService.getRandomBook(req.app.get('db'), randomId)
                     .then( book => {
+                        console.log(book)
                         logger.info(`random id is ${randomId}`)
                         res
                             .status(200)
