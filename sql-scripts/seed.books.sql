@@ -1,9 +1,71 @@
 INSERT INTO books_table (award, title, author, year) VALUES
 --> 'The Andrew Carnegie Medals for Excellence in Fiction'
+('Lost Children Archive', 'Valeria Luiselli', 2020)
+('The Great Believers', 'Rebecca Makkai', 2019)
+('Manhattan Beach', 'Jennifer Egan', 2018)
+('The Underground Railroad', 'Colson Whitehead', 2017)
+('The Sympathizer', 'Viet Thanh Nguyen', 2016),
+('All the Light We Cannot See', 'Anthony Doerr', 2015),
+('The Goldfinch', 'Donna Tartt', 2014),
+('Canada', 'Richard Ford', 2013),
+('The Forgotten Waltz', 'Anne Enright', 2012)
+
 --> 'The Booker Prize'
 ('The Booker Prize', 'Shuggie Bain', 'Douglas Stuart', 2020),
 ('The Booker Prize', 'The Testaments', 'Magaret Atwood' , 2019),
 ('The Booker Prize', 'Milkman','Anna Burns', 2018),
+('Something To Answer For', 'PH Newby', 1969),
+('The Elected Member', 'Bernice Rubens', 1970)
+('In a Free State', 'VS Naipaul', 1971),
+('G', 'John Berger', 1972),
+The Siege of Krishnapur	JG Farrell, 1973
+Holiday	Stanley Middleton, 1974
+The Conservationist	Nadine Gordimer, 1974
+Heat and Dust	Ruth Prawer Jhabvala, 1975
+Saville	David Storey, 1976
+Staying On	Paul Scott, 1977
+The Sea, The Sea	Iris Murdoch, 1978
+Offshore	Penelope Fitzgerald, 1979
+Rites of Passage	William Golding, 1980
+('Midnight''s Children', 'Salman Rushdie', 1981)
+Schindler''s Ark	Thomas Keneally	1982
+Life & Times of Michael K	JM Coetzee, 1983
+Hotel du Lac	Anita Brookner, 1984
+The Bone People	Keri Hulme, 1985
+The Old Devils	Kingsley Amis, 1986
+Moon Tiger	Penelope Lively	1987
+Oscar and Lucinda	Peter Carey	1988
+The Remains of the Day	Kazuo Ishiguro, 1989
+Possession	AS Byatt, 1990
+The Famished Road	Ben Okri, 1991
+Sacred Hunger	Barry Unsworth, 1992
+The English Patient	Michael Ondaatje, 1992
+Paddy Clarke Ha Ha Ha	Roddy Doyle, 1993
+How Late It Was, How Late	James Kelman, 1994
+The Ghost Road	Pat Barker, 1995
+Last Orders	Graham Swift, 1996
+The God of Small Things	Arundhati Roy, 1997
+Amsterdam	Ian McEwan, 1998
+Disgrace	JM Coetzee, 1999
+The Blind Assassin	Margaret Atwood	2000
+True History of the Kelly Gang	Peter Carey	2001
+Life of Pi	Yann Martel	2002
+Vernon God Little	DBC Pierre, 2003
+The Line of Beauty	Alan Hollinghurst, 2004
+The Sea	John Banville, 2005
+The Inheritance of Loss	Kiran Desai	2006
+The Gathering	Anne Enright, 2007
+The White Tiger	Aravind Adiga, 2008
+Wolf Hall	Hilary Mantel, 2009
+Troubles	JG Farrell, 1970 "Lost Booker"
+The Finkler Question	Howard Jacobson	2010
+The Sense of an Ending	Julian Barnes, 2011
+Bring Up the Bodies	Hilary Mantel, 2012
+Lincoln in the Bardo, George Saunders, 2017
+The Sellout, Paul Beatty, 2016
+A Brief History of Seven Killings, Marlon James, 2015
+The Narrow Road to the Deep North, Richard Flanagan, 2014
+The Luminaries, Eleanor Catton, 2013
 
 --> 'National Book Award for Fiction'
 ('National Book Award for Fiction', 'Interior Chinatown', 'Charles Yu', 2020),
