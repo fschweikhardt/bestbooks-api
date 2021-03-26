@@ -21,11 +21,30 @@ UsersRouter
     })
 
 UsersRouter
+    .route('/api/all-books')
+    .get((req,res,next) => {
+        //gets all books
+        UsersService.allBooks(req.app.get('db'))
+            .then(data => {
+                res 
+                    .status(200)
+                    .json(data)
+            })
+            .catch(next)
+    })
+
+UsersRouter
     .route('/api/award-list')
     .post(bodyParser, (req,res,next) => {
         const { award } = req.body
         //gets all books from one award list
         UsersService.allFromList(req.app.get('db'), award)
+            .then(data => {
+                res 
+                    .status(200)
+                    .json(data)
+            })
+            .catch(next)
     })
 
 UsersRouter

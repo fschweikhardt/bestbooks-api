@@ -1,6 +1,9 @@
 const UsersService = {
-    checkUsername(knex, username) {
-        return knex.select('username').from('users_table').where('username', username)
+    allBooks(knex) {
+        return knex.select('*').from('books_table')
+    },
+    allFromList(knex, award) {
+        return knex.select('*').from('books_table').where('award', award)
     }
 }
 
