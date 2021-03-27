@@ -9,13 +9,13 @@ const UsersService = {
         return knex.select('*').from('books_table').where('year', year)
     },
     specificBook(knex, award, year) {
-        return knex.select('*').from('books_table').where('year', year).andWhere('award', award)
+        return knex.select('*').from('books_table').where('year', year).andWhere('award', award).first()
     },
     dbLength(knex) {
         return knex.max('id').from('books_table')
     },
     getRandomBook(knex, id) {
-        return knex.select('*').from('books_table').where('id', id)
+        return knex.select('*').from('books_table').where('id', id).first()
     }
 }
 

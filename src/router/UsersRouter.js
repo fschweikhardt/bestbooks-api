@@ -38,6 +38,7 @@ UsersRouter
     .route('/award-list')
     .post(bodyParser, (req,res,next) => {
         const { award } = req.body
+        logger.info(award)
         //gets all books from one award list
         UsersService.allFromAward(req.app.get('db'), award)
             .then(data => {
@@ -52,8 +53,10 @@ UsersRouter
     .route('/year-list')
     .post(bodyParser, (req,res,next) => {
         const { year } = req.body
+        const yearToNum = Number(year)
+        logger.info(yearToNum)
         //gets all books from one year
-        UsersService.allFromYear(req.app.get('db'), year)
+        UsersService.allFromYear(req.app.get('db'), yearToNum)
             .then(data => {
                 res 
                     .status(200)
@@ -89,7 +92,7 @@ UsersRouter
                 UsersService.getRandomBook(req.app.get('db'), randomId)
                     .then( book => {
                         console.log(book)
-                        logger.info(`random id is ${randomId}`)
+                        //logger.info(`random id is ${randomId}`)
                         res
                             .status(200)
                             .json(book)
