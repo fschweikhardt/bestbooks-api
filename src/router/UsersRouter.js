@@ -22,6 +22,26 @@ UsersRouter
     })
 
 UsersRouter
+    .route('/get-years')
+    .get((req,res,next) => {
+        UsersService.getYears(req.app.get('db'))
+            .then(data => {
+                console.log(data)
+                res.status(200).json(data)
+            })
+    })
+
+UsersRouter
+    .route('/get-awards')
+    .get((req,res,next) => {
+        UsersService.getAwards(req.app.get('db'))
+            .then(data => {
+                console.log(data)
+                res.status(200).json(data)
+            })
+    })
+
+UsersRouter
     .route('/all-books')
     .get((req,res,next) => {
         //gets all books
