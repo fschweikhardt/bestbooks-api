@@ -2,12 +2,8 @@ const express = require('express')
 const UsersRouter = express.Router()
 const bodyParser = express.json()
 const UsersService = require('./UsersService')
-// const bcrypt = require('bcryptjs')
-// const jwt = require('jsonwebtoken')
-// const { JWT_SECRET } = require('../config')
 const logger = require('../logger.js')
-const { readSync } = require('fs')
-//xss
+//const { readSync } = require('fs')
 
 UsersRouter
     .route('/test')
@@ -26,7 +22,6 @@ UsersRouter
     .get((req,res,next) => {
         UsersService.getYears(req.app.get('db'))
             .then(data => {
-                console.log(data)
                 res.status(200).json(data)
             })
     })
@@ -36,7 +31,6 @@ UsersRouter
     .get((req,res,next) => {
         UsersService.getAwards(req.app.get('db'))
             .then(data => {
-                console.log(data)
                 res.status(200).json(data)
             })
     })
@@ -111,8 +105,6 @@ UsersRouter
                 const randomId = Math.floor((Math.random() * dbLength) + 1)
                 UsersService.getRandomBook(req.app.get('db'), randomId)
                     .then( book => {
-                        console.log(book)
-                        //logger.info(`random id is ${randomId}`)
                         res
                             .status(200)
                             .json(book)

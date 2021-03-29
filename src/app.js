@@ -5,7 +5,7 @@ const helmet = require('helmet')
 const cors = require('cors')
 const { NODE_ENV } = require('./config')
 const {CLIENT_ORIGIN} = require('./config')
-//const validateBearerToken = require('./validate-bearer-token')
+const validateBearerToken = require('./validate-bearer-token')
 const UsersRouter = require('./router/UsersRouter')
 
 const app = express()
@@ -22,7 +22,8 @@ const morganOption = (NODE_ENV === 'production')
         origin: CLIENT_ORIGIN
     })
   );
-  //app.use(validateBearerToken)
+
+app.use(validateBearerToken)
 
 app.use('/api', UsersRouter)
 
