@@ -35,6 +35,9 @@ UsersRouter
     .get((req,res,next) => {
         UsersService.getAwards(req.app.get('db'))
             .then(data => {
+                if (!data) {
+                    return res.status(400).res.send('something went wrong')
+                }
                 res.status(200).json(data)
             })
             .catch(next)
@@ -46,9 +49,10 @@ UsersRouter
         //gets all books
         UsersService.allBooks(req.app.get('db'))
             .then(data => {
-                res 
-                    .status(200)
-                    .json(data)
+                if (!data) {
+                    return res.status(400).res.send('something went wrong')
+                }
+                res.status(200).json(data)
             })
             .catch(next)
     })
@@ -61,9 +65,10 @@ UsersRouter
         //gets all books from one award list
         UsersService.allFromAward(req.app.get('db'), award)
             .then(data => {
-                res 
-                    .status(200)
-                    .json(data)
+                if (!data) {
+                    return res.status(400).res.send('something went wrong')
+                }
+                res.status(200).json(data)
             })
             .catch(next)
     })
@@ -77,9 +82,10 @@ UsersRouter
         //gets all books from one year
         UsersService.allFromYear(req.app.get('db'), yearToNum)
             .then(data => {
-                res 
-                    .status(200)
-                    .json(data)
+                if (!data) {
+                    return res.status(400).res.send('something went wrong')
+                }
+                res.status(200).json(data)
             })
             .catch(next)
     })
@@ -91,9 +97,10 @@ UsersRouter
         //gets one book from specified list and year
         UsersService.specificBook(req.app.get('db'), award, year)
             .then(data => {
-                res 
-                    .status(200)
-                    .json(data)
+                if (!data) {
+                    return res.status(400).res.send('something went wrong')
+                }
+                res.status(200).json(data)
             })
             .catch(next)
     })
@@ -104,15 +111,19 @@ UsersRouter
         //get random number based off db length
         UsersService.dbLength(req.app.get('db'))
             .then(data => {
+                if (!data) {
+                    return res.status(400).res.send('something went wrong')
+                }
                 //get db length
                 let dbLength = Number(Object.values(data[0]))
                 //get random number 
                 const randomId = Math.floor((Math.random() * dbLength) + 1)
                 UsersService.getRandomBook(req.app.get('db'), randomId)
                     .then( book => {
-                        res
-                            .status(200)
-                            .json(book)
+                        if (!book) {
+                            return res.status(400).res.send('something went wrong')
+                        }
+                        res.status(200).json(book)
                     })
                     .catch(next)
 
