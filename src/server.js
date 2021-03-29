@@ -14,8 +14,11 @@ const db = knex({
     user: 'nobqqnmgwfztus',
     database : 'dc4cgkjcdcgs46',
     password : '2b2bd4cdcc4a7d4d5df414231c5f64070a304394b3816d9c22d89774ecc27fe8',
+    ssl: {
+      rejectUnauthorized: false
+    }
     // database : 'myapp_test',
-    ssl: true
+    //ssl: true
   }
 })
 
