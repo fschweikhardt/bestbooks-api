@@ -29,8 +29,7 @@
     "pg": "^8.5.1",
     "postgrator": "^4.1.1",
     "postgrator-cli": "^4.0.0",
-    "winston": "^3.3.3",
-    "xss": "^1.0.8"
+    "winston": "^3.3.3"
   },
   "devDependencies": {
     "chai": "^4.2.0",
