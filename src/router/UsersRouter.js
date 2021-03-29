@@ -22,8 +22,13 @@ UsersRouter
     .get((req,res,next) => {
         UsersService.getYears(req.app.get('db'))
             .then(data => {
+                if (!data) {
+                    logger.error(`no data`)
+                    return res.status(400).res.send('something went wrong')
+                }
                 res.status(200).json(data)
             })
+            .catch(next)
     })
 
 UsersRouter
@@ -33,6 +38,7 @@ UsersRouter
             .then(data => {
                 res.status(200).json(data)
             })
+            .catch(next)
     })
 
 UsersRouter
