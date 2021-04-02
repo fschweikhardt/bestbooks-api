@@ -124,43 +124,55 @@ describe('endpoints db connection', function() {
 //     })
 // })
 
-//---> 1 DESCRIBE - GET <--//
+//---> 1 DESCRIBE - GET ENDPOINTS <--//
 describe('1 - GET /api/endpoints', () => {
-    context('1A Given bad endpoint', () => {
+    context('1A - given bad endpoint with no auth', () => {
+        it('responds with 401 no auth', () => {
+        return supertest(app)
+            .get('/not-an-endpoint')
+            .expect(401)
+    })
+    context('1B - given bad endpoint with auth', () => {
         it('responds with 404 not found', () => {
         return supertest(app)
             .get('/not-an-endpoint')
             .set('Authorization', 'Bearer ' + TOKEN)
             .expect(404)
     })
-    context('1B Given no test data', () => {
+    context('1C - given no test data with no auth', () => {
+        it('responds with 401 no auth', () => {
+            return supertest(app)
+            .get('/api/get-awards')
+            .expect(401)
+        })
+    })
+    context('1D - given no test data with auth', () => {
         it('responds with 200 and an empty list', () => {
             return supertest(app)
             .get('/api/get-awards')
             .set('Authorization', 'Bearer ' + TOKEN)
-            .expect(200)
+            .expect(200, [])
         })
     })
-    context('1C GET random book', () => {
+    context('1E - get random book', () => {
         it('responds with one json object', () => {
             return supertest(app)
                 .get('/api/random-book')
                 .set('Authorization', 'Bearer' + TOKEN)
-                .expect(200, 'working')
+                .expect(200)
         })
-    })
-        
-     })
+    })    
+})
 
-//---> 2 DESCRIBE - POST <--//
-describe('2 - POST /api/endpoints', () => {
-    context('2A - Given no data to POST', () => {
-        it('responds with 400 something went wrong', () => {
-        return supertest(app)
-            .post('/api/test')
-            .set('Authorization', 'Bearer ' + TOKEN)
-            .expect(400)
-    })
+//---> 2 DESCRIBE - POST ENDPOINTS <--//
+// describe('2 - POST /api/endpoints', () => {
+//     context('2A - Given no data to POST', () => {
+//         it('responds with 400 something went wrong', () => {
+//         return supertest(app)
+//             .post('/api/test')
+//             .set('Authorization', 'Bearer ' + TOKEN)
+//             .expect(400)
+//     })
     //2B - CONTEXT to endpoint - given POST data
     // context('2B Given data to POST', () => {
     //     it('responds with 201 not found', () => {
