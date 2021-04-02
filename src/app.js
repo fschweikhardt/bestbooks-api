@@ -28,7 +28,7 @@ app.use(validateBearerToken)
 app.use('/api', UsersRouter)
 
 app.get('/', (req,res,next) => {
-  res.send('Hello, Best Books!')
+  res.send('Hello, world!')
   })
     
 module.exports = app

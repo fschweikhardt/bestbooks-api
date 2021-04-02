@@ -5,30 +5,17 @@ const UsersService = require('./UsersService')
 const logger = require('../logger.js')
 //const { readSync } = require('fs')
 
-UsersRouter
-    .route('/test')
-    .get((req,res,next) => {
-        res.status(200).send("working")
-        next()
-    })
-    .post(bodyParser, (req,res,next) => {
-        const { title } = req.body
-        res.status(201).send(title)
-        next()
-    })
-
-UsersRouter
-    .route('/get-years')
-    .get((req,res,next) => {
-        UsersService.getYears(req.app.get('db'))
-            .then(data => {
-                if (!data) {
-                    return res.status(400).res.send('something went wrong')
-                }
-                res.status(200).json(data)
-            })
-            .catch(next)
-    })
+// UsersRouter
+//     .route('/test')
+//     .get((req,res,next) => {
+//         res.status(200).send("working")
+//         next()
+//     })
+//     .post(bodyParser, (req,res,next) => {
+//         const { title } = req.body
+//         res.status(201).send(title)
+//         next()
+//     })
 
 UsersRouter
     .route('/get-awards')
@@ -36,26 +23,41 @@ UsersRouter
         UsersService.getAwards(req.app.get('db'))
             .then(data => {
                 if (!data) {
-                    return res.status(400).res.send('something went wrong')
+                    return res.status(400).send('something went wrong')
+                }
+                res.status(200).json(data)
+            })
+            .catch(next)
+    })
+    
+UsersRouter
+    .route('/get-years')
+    .get((req,res,next) => {
+        UsersService.getYears(req.app.get('db'))
+            .then(data => {
+                if (!data) {
+                    return res.status(400).send('something went wrong')
                 }
                 res.status(200).json(data)
             })
             .catch(next)
     })
 
-UsersRouter
-    .route('/all-books')
-    .get((req,res,next) => {
-        //gets all books
-        UsersService.allBooks(req.app.get('db'))
-            .then(data => {
-                if (!data) {
-                    return res.status(400).res.send('something went wrong')
-                }
-                res.status(200).json(data)
-            })
-            .catch(next)
-    })
+
+
+// UsersRouter
+//     .route('/all-books')
+//     .get((req,res,next) => {
+//         //gets all books
+//         UsersService.allBooks(req.app.get('db'))
+//             .then(data => {
+//                 if (!data) {
+//                     return res.status(400).send('something went wrong')
+//                 }
+//                 res.status(200).json(data)
+//             })
+//             .catch(next)
+//     })
 
 UsersRouter
     .route('/award-list')
@@ -66,7 +68,7 @@ UsersRouter
         UsersService.allFromAward(req.app.get('db'), award)
             .then(data => {
                 if (!data) {
-                    return res.status(400).res.send('something went wrong')
+                    return res.status(400).send('something went wrong')
                 }
                 res.status(200).json(data)
             })
@@ -83,7 +85,7 @@ UsersRouter
         UsersService.allFromYear(req.app.get('db'), yearToNum)
             .then(data => {
                 if (!data) {
-                    return res.status(400).res.send('something went wrong')
+                    return res.status(400).send('something went wrong')
                 }
                 res.status(200).json(data)
             })
@@ -98,7 +100,7 @@ UsersRouter
         UsersService.specificBook(req.app.get('db'), award, year)
             .then(data => {
                 if (!data) {
-                    return res.status(400).res.send('something went wrong')
+                    return res.status(400).send('something went wrong')
                 }
                 res.status(200).json(data)
             })
@@ -112,7 +114,7 @@ UsersRouter
         UsersService.dbLength(req.app.get('db'))
             .then(data => {
                 if (!data) {
-                    return res.status(400).res.send('something went wrong')
+                    return res.status(400).send('something went wrong')
                 }
                 //get db length
                 let dbLength = Number(Object.values(data[0]))
@@ -121,7 +123,7 @@ UsersRouter
                 UsersService.getRandomBook(req.app.get('db'), randomId)
                     .then( book => {
                         if (!book) {
-                            return res.status(400).res.send('something went wrong')
+                            return res.status(400).send('something went wrong')
                         }
                         res.status(200).json(book)
                     })
