@@ -6,8 +6,9 @@ const knex = require('knex')
 //const { TEST_DATABASE_URL} =  require('../src/config')
 
 describe('endpoints db connection', function() {
+    let db
     before('make knex instance', () => {
-        const db = knex({
+        db = knex({
             client: 'pg', 
             connection: 'postgres://postgres:postgres@localhost:5432/bestbooks'
         })
@@ -122,23 +123,32 @@ const TOKEN = 123456789
 // })
 
 //---> 1 DESCRIBE - GET <--//
-describe('1 - GET /api/get-awards', () => {
+describe('1 - GET /api/endpoints', () => {
     //1A - CONTEXT to endpoint - given no data in the db
-          context('1A Given no test data', () => {
-            it('responds with 200 and an empty list', () => {
-              return supertest(app)
-                .get('/api/get-awards')
-                .set('Authorization', 'Bearer ' + TOKEN)
-                .expect(200, [])
+        // context('1A Given bad endpoint', () => {
+        //     it('responds with 404 not found', () => {
+        //     return supertest(app)
+        //         .get('/not-an-endpoint')
+        //         .set('Authorization', 'Bearer ' + TOKEN)
+        //         .expect(404)
+        // })
+        // context('1A Given no test data', () => {
+        //     it('responds with 200 and an empty list', () => {
+        //       return supertest(app)
+        //         .get('/api/get-awards')
+        //         .set('Authorization', 'Bearer ' + TOKEN)
+        //         .expect(200, [])
+        //     })
+        // })
+        context('1A GET random book', () => {
+            it('responds with one json object', () => {
+                return supertest(app)
+                    .get('/api/random-book')
+                    .set('Authorization', 'Bearer' + TOKEN)
+                    .expect(200)
+            })
         })
-      })
-        context('1A Given bad endpoint', () => {
-            it('responds with 404 not found', () => {
-            return supertest(app)
-                .get('/not-an-endpoint')
-                .set('Authorization', 'Bearer ' + TOKEN)
-                .expect(404)
-     })
+        
      })
 })
 
