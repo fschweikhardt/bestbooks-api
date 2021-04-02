@@ -26,28 +26,18 @@ describe('Best Books endpoints', () => {
     before('clean the table', () => db.raw('TRUNCATE books_table RESTART IDENTITY CASCADE'))
     afterEach('cleanup', () => db.raw('TRUNCATE books_table RESTART IDENTITY CASCADE'))
 
-    const BooksData = makeBooksArray()
-            beforeEach('insert BooksData', () => {
-            return db
-                .into('books_table')
-                .insert(BooksData)
-                .then(() => {
-                return db
-                })
-            })
-
     //---> 1 DESCRIBE - GET ENDPOINTS <--//
-    describe('1 - GET /api/endpoints', () => {
+    describe.only('1 - GET /api/endpoints', () => {
         context('1A - given bad endpoint with no auth', () => {
-            it.only('responds with 401 no auth', () => {
-            return supertest(app)
+            it('responds with 401 no auth', () => {
+                return supertest(app)
                 .get('/not-an-endpoint')
                 .expect(401)
             })
         })
         context('1B - given bad endpoint with auth', () => {
             it('responds with 404 not found', () => {
-            return supertest(app)
+                return supertest(app)
                 .get('/not-an-endpoint')
                 .set('Authorization', 'Bearer ' + TOKEN)
                 .expect(404)
@@ -68,7 +58,27 @@ describe('Best Books endpoints', () => {
                 .expect(200, [])
             })
         })
-        context('1E - given no year data with auth', () => {
+        context('1F - given award data', () => {
+            let BooksData = makeBooksArray()
+            beforeEach('insert BooksData', () => {
+                return db
+                    .into('books_table')
+                    .insert(BooksData)
+                    .then(() => {
+                    return db
+                })
+            })
+            it('responds with 200', () => {
+                return supertest(app)
+                    .get('/api/get-awards')
+                    .set('Authorization', 'Bearer ' + TOKEN)
+                    .expect(200)
+                    .expect(res => {
+                        expect(res.body[0]).to.have.property('award')
+                    })
+            })
+        })
+        context('1G - given no year data with auth', () => {
             it('responds with 200 and an empty list', () => {
                 return supertest(app)
                 .get('/api/get-years')
@@ -76,11 +86,40 @@ describe('Best Books endpoints', () => {
                 .expect(200, [])
             })
         })
-        context.skip('1F - get random book', () => {
+        context('1H - given year data', () => {
+            let BooksData = makeBooksArray()
+            beforeEach('insert BooksData', () => {
+                return db
+                    .into('books_table')
+                    .insert(BooksData)
+                    .then(() => {
+                    return db
+                })
+            })
+            it('responds with 200', () => {
+                return supertest(app)
+                .get('/api/get-years')
+                .set('Authorization', 'Bearer ' + TOKEN)
+                .expect(200)
+                .expect(res => {
+                    expect(res.body[0]).to.have.property('year')
+                })
+            })
+        })
+        context.skip('1I - get random book', () => {
+            let BooksData = makeBooksArray()
+            beforeEach('insert BooksData', () => {
+            return db
+                .into('books_table')
+                .insert(BooksData)
+                .then(() => {
+                return db
+                })
+            })
             it('responds with one book', () => {
                 return supertest(app)
                     .get('/api/random-book')
-                    //.set('Authorization', 'Bearer' + TOKEN)
+                    .set('Authorization', 'Bearer' + TOKEN)
                     .expect(200)
             })
         })    
