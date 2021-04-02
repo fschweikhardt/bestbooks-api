@@ -74,53 +74,52 @@ describe('Best Books endpoints', () => {
         })    
     })
 
-//--> 2 DESCRIBE - POST ENDPOINTS <--//
-describe('2 - POST /api/endpoints', () => {
-    context('2A - given award data to POST', () => {
-        it('responds with 200', () => {
-        return supertest(app)
-            .post('/api/award-list')
-            .set('Authorization', 'Bearer ' + TOKEN)
-            .send({
-                award: "testing endpoints"
+    //--> 2 DESCRIBE - POST ENDPOINTS <--//
+    describe('2 - POST /api/endpoints', () => {
+        context('2A - given award data to POST', () => {
+            it('responds with 200', () => {
+            return supertest(app)
+                .post('/api/award-list')
+                .set('Authorization', 'Bearer ' + TOKEN)
+                .send({
+                    award: "testing endpoints"
+                })
+                .expect(200)
             })
-            .expect(200)
+        })
+        context('2B - given year data to POST', () => {
+            it('responds with 200', () => {
+            return supertest(app)
+                .post('/api/year-list')
+                .set('Authorization', 'Bearer ' + TOKEN)
+                .send({
+                    year: 2000
+                })
+                .expect(200)
+            })
+        })
+        context('2C - given award and year data to POST', () => {
+            const BooksData = makeBooksArray()
+            beforeEach('insert BooksData', () => {
+            return db
+                .into('books_table')
+                .insert(BooksData)
+                .then(() => {
+                return db
+                })
+            })
+            it('responds with 200', () => {
+            return supertest(app)
+                .post('/api/specific-book')
+                .set('Authorization', 'Bearer ' + TOKEN)
+                .send({
+                    award: "The Booker Prize",
+                    year: 2020,
+                })
+                .expect(200)
+            })
         })
     })
-    context('2B - given year data to POST', () => {
-        it('responds with 200', () => {
-        return supertest(app)
-            .post('/api/year-list')
-            .set('Authorization', 'Bearer ' + TOKEN)
-            .send({
-                year: 2000
-            })
-            .expect(200)
-        })
-    })
-    context('2C - given award and year data to POST', () => {
-        const BooksData = makeBooksArray()
-        beforeEach('insert BooksData', () => {
-          return db
-            .into('books_table')
-            .insert(BooksData)
-            .then(() => {
-              return db
-            })
-        })
-        it('responds with 200', () => {
-        return supertest(app)
-            .post('/api/specific-book')
-            .set('Authorization', 'Bearer ' + TOKEN)
-            .send({
-                award: "The Booker Prize",
-                year: 2020,
-            })
-            .expect(200)
-        })
-    })
-})
-
 })
 
 //.set('Authorization', 'Bearer ' + TOKEN)
