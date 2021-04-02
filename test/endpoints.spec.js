@@ -1,4 +1,3 @@
-const { expect } = require('chai')
 const supertest = require('supertest')
 const app = require('../src/app')
 const { makeBooksArray } = require('./book-fixtures.js')
@@ -9,7 +8,6 @@ const TOKEN = 123456789
 
 describe('Best Books endpoints', () => {
     let db
-    
     before('make knex instance', () => {
         db = knex({
             client: 'pg', 
@@ -17,12 +15,97 @@ describe('Best Books endpoints', () => {
         })
       app.set('db', db)
     })
-
     after('disconnect from db', () => db.destroy())
-
     before('clean the table', () => db.raw('TRUNCATE books_table RESTART IDENTITY CASCADE'))
-    
     afterEach('cleanup', () => db.raw('TRUNCATE books_table RESTART IDENTITY CASCADE'))
+
+//---> 1 DESCRIBE - GET ENDPOINTS <--//
+describe('1 - GET /api/endpoints', () => {
+    context('1A - given bad endpoint with no auth', () => {
+        it('responds with 401 no auth', () => {
+        return supertest(app)
+            .get('/not-an-endpoint')
+            .expect(401)
+        })
+    })
+    context('1B - given bad endpoint with auth', () => {
+        it('responds with 404 not found', () => {
+        return supertest(app)
+            .get('/not-an-endpoint')
+            .set('Authorization', 'Bearer ' + TOKEN)
+            .expect(404)
+        })
+    })
+    context('1C - given no test data with no auth', () => {
+        it('responds with 401 no auth', () => {
+            return supertest(app)
+            .get('/api/get-awards')
+            .expect(401)
+        })
+    })
+    context('1D - given no awards data with auth', () => {
+        it('responds with 200 and an empty list', () => {
+            return supertest(app)
+            .get('/api/get-awards')
+            .set('Authorization', 'Bearer ' + TOKEN)
+            .expect(200, [])
+        })
+    })
+    context('1E - given no year data with auth', () => {
+        it('responds with 200 and an empty list', () => {
+            return supertest(app)
+            .get('/api/get-years')
+            .set('Authorization', 'Bearer ' + TOKEN)
+            .expect(200, [])
+        })
+    })
+    context('1F - get random book', () => {
+        it.skip('responds with one json object', () => {
+            return supertest(app)
+                .get('/api/random-book')
+                .set('Authorization', 'Bearer' + TOKEN)
+                .expect(200)
+        })
+    })    
+})
+
+//--> 2 DESCRIBE - POST ENDPOINTS <--//
+describe('2 - POST /api/endpoints', () => {
+    context('2A - given award data to POST', () => {
+        it('responds with 200', () => {
+        return supertest(app)
+            .post('/api/award-list')
+            .set('Authorization', 'Bearer ' + TOKEN)
+            .send({
+                award: "testing endpoints"
+            })
+            .expect(200)
+        })
+    })
+    context('2B - given year data to POST', () => {
+        it('responds with 200', () => {
+        return supertest(app)
+            .post('/api/year-list')
+            .set('Authorization', 'Bearer ' + TOKEN)
+            .send({
+                year: 2000
+            })
+            .expect(200)
+        })
+    })
+    context('2C - given award and year data to POST', () => {
+        it.skip('responds with 200', () => {
+        return supertest(app)
+            .post('/api/specific-book')
+            .set('Authorization', 'Bearer ' + TOKEN)
+            .send({
+                award: "The Booker Prize",
+                year: 2020,
+            })
+            .expect(200)
+        })
+    })
+})
 
 //.set('Authorization', 'Bearer ' + TOKEN)
 
@@ -125,94 +208,6 @@ describe('Best Books endpoints', () => {
 //             .expect(200)
 //     })
 // })
-
-//---> 1 DESCRIBE - GET ENDPOINTS <--//
-describe('1 - GET /api/endpoints', () => {
-    context('1A - given bad endpoint with no auth', () => {
-        it('responds with 401 no auth', () => {
-        return supertest(app)
-            .get('/not-an-endpoint')
-            .expect(401)
-        })
-    })
-    context('1B - given bad endpoint with auth', () => {
-        it('responds with 404 not found', () => {
-        return supertest(app)
-            .get('/not-an-endpoint')
-            .set('Authorization', 'Bearer ' + TOKEN)
-            .expect(404)
-        })
-    })
-    context('1C - given no test data with no auth', () => {
-        it('responds with 401 no auth', () => {
-            return supertest(app)
-            .get('/api/get-awards')
-            .expect(401)
-        })
-    })
-    context('1D - given no test data with auth', () => {
-        it('responds with 200 and an empty list', () => {
-            return supertest(app)
-            .get('/api/get-awards')
-            .set('Authorization', 'Bearer ' + TOKEN)
-            .expect(200, [])
-        })
-    })
-    context('1E - get random book', () => {
-        it.skip('responds with one json object', () => {
-            return supertest(app)
-                .get('/api/random-book')
-                .set('Authorization', 'Bearer' + TOKEN)
-                .expect(200)
-        })
-    })    
-})
-
-//--> 2 DESCRIBE - POST ENDPOINTS <--//
-describe('2 - POST /api/endpoints', () => {
-    context('2A - given award data to POST', () => {
-        it('responds with 200', () => {
-        return supertest(app)
-            .post('/api/award-list')
-            .set('Authorization', 'Bearer ' + TOKEN)
-            .send({
-                award: "testing endpoints"
-            })
-            .expect(200)
-        })
-    })
-    context('2B - given year data to POST', () => {
-        it('responds with 200', () => {
-        return supertest(app)
-            .post('/api/year-list')
-            .set('Authorization', 'Bearer ' + TOKEN)
-            .send({
-                year: 2000
-            })
-            .expect(200)
-        })
-    })
-    context('2C - given award and year data to POST', () => {
-        it.skip('responds with 200', () => {
-        return supertest(app)
-            .post('/api/specific-book')
-            .set('Authorization', 'Bearer ' + TOKEN)
-            .send({
-                award: "The Booker Prize",
-                year: 2020,
-            })
-            .expect(200)
-        })
-    })
-    //2B - CONTEXT to endpoint - given POST data
-    // context('2B Given data to POST', () => {
-    //     it('responds with 201 not found', () => {
-    //     return supertest(app)
-    //         .get('/not-an-endpoint')
-    //         .set('Authorization', 'Bearer ' + TOKEN)
-    //         .expect(404)
-    // })
-})
 
 //     //1B - CONTEXT to people endpoint - given there is data in the db
 //       context('1B Given there is testData in the database', () => {
