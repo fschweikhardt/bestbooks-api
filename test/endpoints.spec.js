@@ -158,25 +158,52 @@ describe('1 - GET /api/endpoints', () => {
             .expect(200, [])
         })
     })
-    // context('1E - get random book', () => {
-    //     it('responds with one json object', () => {
-    //         return supertest(app)
-    //             .get('/api/random-book')
-    //             .set('Authorization', 'Bearer' + TOKEN)
-    //             .expect(200)
-    //     })
-    // })    
+    context('1E - get random book', () => {
+        it.skip('responds with one json object', () => {
+            return supertest(app)
+                .get('/api/random-book')
+                .set('Authorization', 'Bearer' + TOKEN)
+                .expect(200)
+        })
+    })    
 })
 
-//---> 2 DESCRIBE - POST ENDPOINTS <--//
-// describe('2 - POST /api/endpoints', () => {
-//     context('2A - Given no data to POST', () => {
-//         it('responds with 400 something went wrong', () => {
-//         return supertest(app)
-//             .post('/api/test')
-//             .set('Authorization', 'Bearer ' + TOKEN)
-//             .expect(400)
-//     })
+//--> 2 DESCRIBE - POST ENDPOINTS <--//
+describe('2 - POST /api/endpoints', () => {
+    context('2A - given award data to POST', () => {
+        it('responds with 200', () => {
+        return supertest(app)
+            .post('/api/award-list')
+            .set('Authorization', 'Bearer ' + TOKEN)
+            .send({
+                award: "testing endpoints"
+            })
+            .expect(200)
+        })
+    })
+    context('2B - given year data to POST', () => {
+        it('responds with 200', () => {
+        return supertest(app)
+            .post('/api/year-list')
+            .set('Authorization', 'Bearer ' + TOKEN)
+            .send({
+                year: 2000
+            })
+            .expect(200)
+        })
+    })
+    context('2C - given award and year data to POST', () => {
+        it.skip('responds with 200', () => {
+        return supertest(app)
+            .post('/api/specific-book')
+            .set('Authorization', 'Bearer ' + TOKEN)
+            .send({
+                award: "The Booker Prize",
+                year: 2020,
+            })
+            .expect(200)
+        })
+    })
     //2B - CONTEXT to endpoint - given POST data
     // context('2B Given data to POST', () => {
     //     it('responds with 201 not found', () => {
@@ -185,7 +212,7 @@ describe('1 - GET /api/endpoints', () => {
     //         .set('Authorization', 'Bearer ' + TOKEN)
     //         .expect(404)
     // })
-//})
+})
 
 //     //1B - CONTEXT to people endpoint - given there is data in the db
 //       context('1B Given there is testData in the database', () => {
