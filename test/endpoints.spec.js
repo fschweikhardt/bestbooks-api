@@ -7,8 +7,9 @@ const knex = require('knex')
 
 const TOKEN = 123456789
 
-describe('endpoints db connection', function() {
+describe('Best Books endpoints', () => {
     let db
+    
     before('make knex instance', () => {
         db = knex({
             client: 'pg', 
@@ -16,11 +17,12 @@ describe('endpoints db connection', function() {
         })
       app.set('db', db)
     })
-    after('disconnect from db', () => db.destroy())
-    before('clean the table', () => db.raw('TRUNCATE books_table RESTART IDENTITY CASCADE'))
-    afterEach('cleanup', () => db.raw('TRUNCATE books_table RESTART IDENTITY CASCADE'))
-})
 
+    after('disconnect from db', () => db.destroy())
+
+    before('clean the table', () => db.raw('TRUNCATE books_table RESTART IDENTITY CASCADE'))
+    
+    afterEach('cleanup', () => db.raw('TRUNCATE books_table RESTART IDENTITY CASCADE'))
 
 //.set('Authorization', 'Bearer ' + TOKEN)
 
@@ -131,6 +133,7 @@ describe('1 - GET /api/endpoints', () => {
         return supertest(app)
             .get('/not-an-endpoint')
             .expect(401)
+        })
     })
     context('1B - given bad endpoint with auth', () => {
         it('responds with 404 not found', () => {
@@ -138,6 +141,7 @@ describe('1 - GET /api/endpoints', () => {
             .get('/not-an-endpoint')
             .set('Authorization', 'Bearer ' + TOKEN)
             .expect(404)
+        })
     })
     context('1C - given no test data with no auth', () => {
         it('responds with 401 no auth', () => {
@@ -154,14 +158,14 @@ describe('1 - GET /api/endpoints', () => {
             .expect(200, [])
         })
     })
-    context('1E - get random book', () => {
-        it('responds with one json object', () => {
-            return supertest(app)
-                .get('/api/random-book')
-                .set('Authorization', 'Bearer' + TOKEN)
-                .expect(200)
-        })
-    })    
+    // context('1E - get random book', () => {
+    //     it('responds with one json object', () => {
+    //         return supertest(app)
+    //             .get('/api/random-book')
+    //             .set('Authorization', 'Bearer' + TOKEN)
+    //             .expect(200)
+    //     })
+    // })    
 })
 
 //---> 2 DESCRIBE - POST ENDPOINTS <--//
@@ -401,3 +405,5 @@ describe('1 - GET /api/endpoints', () => {
 //       })
 //     })
 //   })
+
+})
