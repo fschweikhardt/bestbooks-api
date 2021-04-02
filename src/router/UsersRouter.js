@@ -5,12 +5,12 @@ const UsersService = require('./UsersService')
 const logger = require('../logger.js')
 //const { readSync } = require('fs')
 
-// UsersRouter
-//     .route('/test')
-//     .get((req,res,next) => {
-//         res.status(200).send("working")
-//         next()
-//     })
+UsersRouter
+    .route('/test')
+    .get((req,res,next) => {
+        res.status(200).send("working")
+        next()
+    })
 //     .post(bodyParser, (req,res,next) => {
 //         const { title } = req.body
 //         res.status(201).send(title)

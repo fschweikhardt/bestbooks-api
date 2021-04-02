@@ -145,8 +145,8 @@ describe('1 - GET /api/endpoints', () => {
         context('1A GET random book', () => {
             it('responds with one json object', () => {
                 return supertest(app)
-                    .get('/api/random-book')
-                    .set('Authorization', 'Bearer' + 123456789)
+                    .get('/api/test')
+                    //.set('Authorization', 'Bearer' + 123456789)
                     .expect(200)
             })
         })
