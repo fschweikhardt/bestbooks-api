@@ -11,11 +11,11 @@ UsersRouter
         res.status(200).send("working")
         next()
     })
-//     .post(bodyParser, (req,res,next) => {
-//         const { title } = req.body
-//         res.status(201).send(title)
-//         next()
-//     })
+     .post(bodyParser, (req,res,next) => {
+         const { title } = req.body
+         res.status(201).send(title)
+         next()
+     })
 
 UsersRouter
     .route('/get-awards')
