@@ -1,8 +1,8 @@
 const supertest = require('supertest')
 const app = require('../src/app')
-const { makeBooksArray } = require('./book-fixtures.js')
 const knex = require('knex')
 const { TEST_DATABASE_URL} =  require('../src/config')
+const { makeBooksArray } = require('./book-fixtures.js')
 
 const TOKEN = 123456789
 
@@ -12,11 +12,13 @@ describe('Best Books endpoints', () => {
         db = knex({
             client: 'pg', 
             connection: TEST_DATABASE_URL
-            //connection: 'postgres://postgres:postgres@localhost:5432/bestbooks'
-            // host : '5432',
-            // user: 'postgres',
-            // database : 'bestbooks',
-            // password : 'postgres'
+            //connection: 'postgres://postgres:postgres@localhost:5432/test-bestbooks'
+            // connection: {
+            //     host : '5432',
+            //     user: 'postgres',
+            //     database : 'test-bestbooks',
+            //     password : 'postgres'
+            // }
         })
       app.set('db', db)
     })
@@ -24,10 +26,20 @@ describe('Best Books endpoints', () => {
     before('clean the table', () => db.raw('TRUNCATE books_table RESTART IDENTITY CASCADE'))
     afterEach('cleanup', () => db.raw('TRUNCATE books_table RESTART IDENTITY CASCADE'))
 
+    const BooksData = makeBooksArray()
+            beforeEach('insert BooksData', () => {
+            return db
+                .into('books_table')
+                .insert(BooksData)
+                .then(() => {
+                return db
+                })
+            })
+
     //---> 1 DESCRIBE - GET ENDPOINTS <--//
     describe('1 - GET /api/endpoints', () => {
         context('1A - given bad endpoint with no auth', () => {
-            it('responds with 401 no auth', () => {
+            it.only('responds with 401 no auth', () => {
             return supertest(app)
                 .get('/not-an-endpoint')
                 .expect(401)
@@ -64,11 +76,11 @@ describe('Best Books endpoints', () => {
                 .expect(200, [])
             })
         })
-        context('1F - get random book', () => {
+        context.skip('1F - get random book', () => {
             it('responds with one book', () => {
                 return supertest(app)
                     .get('/api/random-book')
-                    .set('Authorization', 'Bearer' + TOKEN)
+                    //.set('Authorization', 'Bearer' + TOKEN)
                     .expect(200)
             })
         })    
@@ -82,7 +94,7 @@ describe('Best Books endpoints', () => {
                 .post('/api/award-list')
                 .set('Authorization', 'Bearer ' + TOKEN)
                 .send({
-                    award: "testing endpoints"
+                    award: "The Booker Prize"
                 })
                 .expect(200)
             })
@@ -99,15 +111,6 @@ describe('Best Books endpoints', () => {
             })
         })
         context('2C - given award and year data to POST', () => {
-            const BooksData = makeBooksArray()
-            beforeEach('insert BooksData', () => {
-            return db
-                .into('books_table')
-                .insert(BooksData)
-                .then(() => {
-                return db
-                })
-            })
             it('responds with 200', () => {
             return supertest(app)
                 .post('/api/specific-book')

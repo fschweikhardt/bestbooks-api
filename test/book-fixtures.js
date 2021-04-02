@@ -1,7 +1,6 @@
 function makeBooksArray() {
     return [
-        {
-            "The Booker Prize" : [
+        
             {
                 id: 1,
                 year: 2020, 
@@ -22,10 +21,7 @@ function makeBooksArray() {
                 title: "Milkman", 
                 author: "Anna Burns",
                 award: "The Booker Prize"
-            }],
-        },
-        {
-            "National Book Award for Fiction" : [
+            },
             {
                 id: 4,
                 year: 2020, 
@@ -46,10 +42,7 @@ function makeBooksArray() {
                 title: "The Friend", 
                 author: "Sigrid Nunez",
                 award: "National Book Award for Fiction"
-            }],
-        },
-        {
-            "The Pultizer Prize for Fiction" : [
+            },
             {
                 id: 7,
                 year: 2020, 
@@ -70,8 +63,7 @@ function makeBooksArray() {
                 title: "Less", 
                 author: "Andrew Sean Greer",
                 award: "The Pultizer Prize for Fiction"
-            }],
-        }
+            }
     ]
 }
 

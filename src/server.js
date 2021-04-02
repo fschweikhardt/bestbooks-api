@@ -9,9 +9,7 @@ const db = knex({
     user: `${USER}`,
     database : `${DATABASE}`,
     password : `${PASSWORD}`,
-    ssl: {
-      rejectUnauthorized: false
-    }
+    ssl: { rejectUnauthorized: false }
   }
 })
 
