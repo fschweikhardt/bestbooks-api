@@ -3,6 +3,7 @@ function makeBooksArray() {
         {
             "The Booker Prize" : [
             {
+                id: 1,
                 year: 2020, 
                 title: "Shuggie Bain", 
                 author: "Douglas Stuart",

@@ -2,7 +2,7 @@ const supertest = require('supertest')
 const app = require('../src/app')
 const { makeBooksArray } = require('./book-fixtures.js')
 const knex = require('knex')
-//const { TEST_DATABASE_URL} =  require('../src/config')
+const { TEST_DATABASE_URL} =  require('../src/config')
 
 const TOKEN = 123456789
 
@@ -11,7 +11,12 @@ describe('Best Books endpoints', () => {
     before('make knex instance', () => {
         db = knex({
             client: 'pg', 
-            connection: 'postgres://postgres:postgres@localhost:5432/bestbooks'
+            connection: TEST_DATABASE_URL
+            //connection: 'postgres://postgres:postgres@localhost:5432/bestbooks'
+            // host : '5432',
+            // user: 'postgres',
+            // database : 'bestbooks',
+            // password : 'postgres'
         })
       app.set('db', db)
     })
@@ -60,7 +65,7 @@ describe('Best Books endpoints', () => {
             })
         })
         context('1F - get random book', () => {
-            it.skip('responds with one json object', () => {
+            it('responds with one book', () => {
                 return supertest(app)
                     .get('/api/random-book')
                     .set('Authorization', 'Bearer' + TOKEN)
@@ -93,7 +98,7 @@ describe('2 - POST /api/endpoints', () => {
             .expect(200)
         })
     })
-    context.only('2C - given award and year data to POST', () => {
+    context('2C - given award and year data to POST', () => {
         const BooksData = makeBooksArray()
         beforeEach('insert BooksData', () => {
           return db
