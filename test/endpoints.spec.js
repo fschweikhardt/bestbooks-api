@@ -5,6 +5,8 @@ const { makeBooksArray } = require('./book-fixtures.js')
 const knex = require('knex')
 //const { TEST_DATABASE_URL} =  require('../src/config')
 
+const TOKEN = 123456789
+
 describe('endpoints db connection', function() {
     let db
     before('make knex instance', () => {
@@ -19,7 +21,7 @@ describe('endpoints db connection', function() {
     afterEach('cleanup', () => db.raw('TRUNCATE books_table RESTART IDENTITY CASCADE'))
 })
 
-const TOKEN = 123456789
+
 //.set('Authorization', 'Bearer ' + TOKEN)
 
 // describe('GET /', () => {
@@ -144,7 +146,7 @@ describe('1 - GET /api/endpoints', () => {
             it('responds with one json object', () => {
                 return supertest(app)
                     .get('/api/random-book')
-                    .set('Authorization', 'Bearer' + TOKEN)
+                    .set('Authorization', 'Bearer' + 123456789)
                     .expect(200)
             })
         })
