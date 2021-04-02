@@ -19,55 +19,55 @@ describe('Best Books endpoints', () => {
     before('clean the table', () => db.raw('TRUNCATE books_table RESTART IDENTITY CASCADE'))
     afterEach('cleanup', () => db.raw('TRUNCATE books_table RESTART IDENTITY CASCADE'))
 
-//---> 1 DESCRIBE - GET ENDPOINTS <--//
-describe('1 - GET /api/endpoints', () => {
-    context('1A - given bad endpoint with no auth', () => {
-        it('responds with 401 no auth', () => {
-        return supertest(app)
-            .get('/not-an-endpoint')
-            .expect(401)
-        })
-    })
-    context('1B - given bad endpoint with auth', () => {
-        it('responds with 404 not found', () => {
-        return supertest(app)
-            .get('/not-an-endpoint')
-            .set('Authorization', 'Bearer ' + TOKEN)
-            .expect(404)
-        })
-    })
-    context('1C - given no test data with no auth', () => {
-        it('responds with 401 no auth', () => {
+    //---> 1 DESCRIBE - GET ENDPOINTS <--//
+    describe('1 - GET /api/endpoints', () => {
+        context('1A - given bad endpoint with no auth', () => {
+            it('responds with 401 no auth', () => {
             return supertest(app)
-            .get('/api/get-awards')
-            .expect(401)
+                .get('/not-an-endpoint')
+                .expect(401)
+            })
         })
-    })
-    context('1D - given no awards data with auth', () => {
-        it('responds with 200 and an empty list', () => {
+        context('1B - given bad endpoint with auth', () => {
+            it('responds with 404 not found', () => {
             return supertest(app)
-            .get('/api/get-awards')
-            .set('Authorization', 'Bearer ' + TOKEN)
-            .expect(200, [])
+                .get('/not-an-endpoint')
+                .set('Authorization', 'Bearer ' + TOKEN)
+                .expect(404)
+            })
         })
+        context('1C - given no test data with no auth', () => {
+            it('responds with 401 no auth', () => {
+                return supertest(app)
+                .get('/api/get-awards')
+                .expect(401)
+            })
+        })
+        context('1D - given no awards data with auth', () => {
+            it('responds with 200 and an empty list', () => {
+                return supertest(app)
+                .get('/api/get-awards')
+                .set('Authorization', 'Bearer ' + TOKEN)
+                .expect(200, [])
+            })
+        })
+        context('1E - given no year data with auth', () => {
+            it('responds with 200 and an empty list', () => {
+                return supertest(app)
+                .get('/api/get-years')
+                .set('Authorization', 'Bearer ' + TOKEN)
+                .expect(200, [])
+            })
+        })
+        context('1F - get random book', () => {
+            it.skip('responds with one json object', () => {
+                return supertest(app)
+                    .get('/api/random-book')
+                    .set('Authorization', 'Bearer' + TOKEN)
+                    .expect(200)
+            })
+        })    
     })
-    context('1E - given no year data with auth', () => {
-        it('responds with 200 and an empty list', () => {
-            return supertest(app)
-            .get('/api/get-years')
-            .set('Authorization', 'Bearer ' + TOKEN)
-            .expect(200, [])
-        })
-    })
-    context('1F - get random book', () => {
-        it.skip('responds with one json object', () => {
-            return supertest(app)
-                .get('/api/random-book')
-                .set('Authorization', 'Bearer' + TOKEN)
-                .expect(200)
-        })
-    })    
-})
 
 //--> 2 DESCRIBE - POST ENDPOINTS <--//
 describe('2 - POST /api/endpoints', () => {
@@ -93,8 +93,17 @@ describe('2 - POST /api/endpoints', () => {
             .expect(200)
         })
     })
-    context('2C - given award and year data to POST', () => {
-        it.skip('responds with 200', () => {
+    context.only('2C - given award and year data to POST', () => {
+        const BooksData = makeBooksArray()
+        beforeEach('insert BooksData', () => {
+          return db
+            .into('books_table')
+            .insert(BooksData)
+            .then(() => {
+              return db
+            })
+        })
+        it('responds with 200', () => {
         return supertest(app)
             .post('/api/specific-book')
             .set('Authorization', 'Bearer ' + TOKEN)
@@ -105,6 +114,8 @@ describe('2 - POST /api/endpoints', () => {
             .expect(200)
         })
     })
+})
+
 })
 
 //.set('Authorization', 'Bearer ' + TOKEN)
@@ -428,4 +439,3 @@ describe('2 - POST /api/endpoints', () => {
 //     })
 //   })
 
-})
