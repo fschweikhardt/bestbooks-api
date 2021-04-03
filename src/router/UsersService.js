@@ -9,7 +9,7 @@ const UsersService = {
         return knex.select('*').from('books_table')
     },
     allFromAward(knex, award) {
-        return knex.select('*').from('books_table').where('award', award)
+        return knex.select('*').from('books_table').where('award', award).orderBy('year', 'desc')
     },
     allFromYear(knex, year) {
         return knex.select('*').from('books_table').where('year', year)
