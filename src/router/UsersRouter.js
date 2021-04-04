@@ -100,7 +100,7 @@ UsersRouter
         UsersService.specificBook(req.app.get('db'), award, year)
             .then(data => {
                 if (!data) {
-                    return res.status(400).send('something went wrong')
+                    return res.status(200).json('no book available')
                 }
                 res.status(200).json(data)
             })
