@@ -3,19 +3,6 @@ const UsersRouter = express.Router()
 const bodyParser = express.json()
 const UsersService = require('./UsersService')
 const logger = require('../logger.js')
-//const { readSync } = require('fs')
-
-UsersRouter
-    .route('/test')
-    .get((req,res,next) => {
-        res.status(200).send("working")
-        next()
-    })
-     .post(bodyParser, (req,res,next) => {
-         const { title } = req.body
-         res.status(201).send(title)
-         next()
-     })
 
 UsersRouter
     .route('/get-awards')
@@ -41,23 +28,7 @@ UsersRouter
                 res.status(200).json(data)
             })
             .catch(next)
-    })
-
-
-
-// UsersRouter
-//     .route('/all-books')
-//     .get((req,res,next) => {
-//         //gets all books
-//         UsersService.allBooks(req.app.get('db'))
-//             .then(data => {
-//                 if (!data) {
-//                     return res.status(400).send('something went wrong')
-//                 }
-//                 res.status(200).json(data)
-//             })
-//             .catch(next)
-//     })
+    }) 
 
 UsersRouter
     .route('/award-list')
